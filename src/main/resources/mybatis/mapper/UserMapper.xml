@@ -57,12 +57,14 @@
     <update id="updateUser" parameterType="com.jerrmy.bookkeeping.entity.User">
         UPDATE
         tb_user
-        SET
+        <set>
+
         <if test="name != null">t_user_name = #{name},</if>
         <if test="password != null">t_user_password = #{password},</if>
         <if test="phone != null">t_user_phone = #{phone},</if>
         <if test="sex != null">t_user_sex = #{sex},</if>
-        t_user_age = #{age}
+        <if test="age != null">t_user_age = #{age}</if>
+        </set>
         WHERE t_user_id = #{id}
     </update>
 
