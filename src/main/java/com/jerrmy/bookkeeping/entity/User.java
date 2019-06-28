@@ -1,7 +1,6 @@
 package com.jerrmy.bookkeeping.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * DateTime : 2019/6/26  9:36
@@ -12,7 +11,6 @@ public class User implements Serializable {
     private Long id;
     private String name;
     private String password;
-    private Date birthday;
     private String phone;
     private String sex;
     private String age;
@@ -21,11 +19,10 @@ public class User implements Serializable {
         super();
     }
 
-    public User(Long id, String name, String password, Date birthday, String phone, String sex, String age) {
+    public User(Long id, String name, String password, String phone, String sex, String age) {
         this.id = id;
         this.name = name;
         this.password = password;
-        this.birthday = birthday;
         this.phone = phone;
         this.sex = sex;
         this.age = age;
@@ -53,14 +50,6 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
     }
 
     public String getPhone() {
@@ -93,7 +82,6 @@ public class User implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
-                ", birthday=" + birthday +
                 ", phone='" + phone + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age='" + age + '\'' +

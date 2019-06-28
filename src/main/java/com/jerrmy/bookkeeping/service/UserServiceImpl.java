@@ -1,6 +1,6 @@
 package com.jerrmy.bookkeeping.service;
 
-import com.jerrmy.bookkeeping.dao.UserDao;
+import com.jerrmy.bookkeeping.mapper.UserMapper;
 import com.jerrmy.bookkeeping.entity.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,40 +16,40 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao userDao;
+    private UserMapper userMapper;
 
     @Override
     public List<User> getAllUsers() {
-        return userDao.getAllUsers();
+        return userMapper.getAllUsers();
     }
 
     @Override
     public List<User> getUserById(String id) {
-        return userDao.getUserById(id);
+        return userMapper.getUserById(id);
     }
 
     @Override
     public List<User> getUserByName(String name) {
-        return userDao.getUserByName(name);
+        return userMapper.getUserByName(name);
     }
 
     @Override
     public List<User> getUserByPhone(String phone) {
-        return userDao.getUserByPhone(phone);
+        return userMapper.getUserByPhone(phone);
     }
 
     @Override
     public int create(User user) {
-        return userDao.addUser(user);
+        return userMapper.addUser(user);
     }
 
     @Override
     public void deleteUser(Long id) {
-        userDao.deleteUser(id);
+        userMapper.deleteUser(id);
     }
 
     @Override
     public void updateUser(User user) {
-        userDao.updateUser(user);
+        userMapper.updateUser(user);
     }
 }

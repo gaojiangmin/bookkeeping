@@ -1,4 +1,4 @@
-package com.jerrmy.bookkeeping.dao;
+package com.jerrmy.bookkeeping.mapper;
 
 import com.jerrmy.bookkeeping.entity.User;
 
@@ -17,30 +17,53 @@ import java.util.List;
  * Author: Jermmy.
  */
 @Mapper
-public interface UserDao {
+public interface UserMapper extends BaseMapper{
 
-    @Select("select * from tb_user")
-    @Results({
-            @Result(property = "name", column = "name"),
-            @Result(property = "sex", column = "sex"),
-    })
+
+    /**
+     * 获取所有用户
+     * @return
+     */
     List<User> getAllUsers();
 
-    @Select("select * from tb_user where id=#{id}")
+    /**
+     * 根据Id查询用户
+     * @param id
+     * @return
+     */
     List<User> getUserById(String id);
 
-    @Select("select * from tb_user where name=#{name}")
+
+    /**
+     * 根据姓名查询用户
+     * @param name
+     * @return
+     */
     List<User> getUserByName(String name);
 
-    @Select("select * from tb_user where phone=#{phone}")
+    /**
+     * 根据手机号查询用户
+     * @param phone
+     * @return
+     */
     List<User> getUserByPhone(String phone);
 
-    @Insert("insert into tb_user(name,password,phone,sex,age) values (#{name},#{password},#{phone},#{sex},#{age})")
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
     int addUser(User user);
 
-    @Delete("delete from tb_user where id=#{id}")
+    /**
+     * 删除用户
+     * @param id
+     */
     void deleteUser(Long id);
 
-    @Update("update tb_user set name=#{name},password=#{password},phone=#{phone},sex=#{sex},age=#{age} where id=#{id}")
+    /**
+     * 修改用户
+     * @param user
+     */
     void updateUser(User user);
 }
