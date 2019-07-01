@@ -2,13 +2,8 @@ package com.jerrmy.bookkeeping.mapper;
 
 import com.jerrmy.bookkeeping.entity.User;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -16,6 +11,7 @@ import java.util.List;
  * DateTime : 2019/6/26  10:07
  * Author: Jermmy.
  */
+@Component
 @Mapper
 public interface UserMapper extends BaseMapper{
 
