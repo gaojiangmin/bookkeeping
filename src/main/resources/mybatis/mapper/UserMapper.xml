@@ -36,14 +36,14 @@
         SELECT
         <include refid="Base_Column_List" />
         FROM tb_user
-        WHERE t_user_name = #{name}
+        WHERE t_user_name like concat('%',#{name},'%')
     </select>
 
     <select id="getUserByPhone" parameterType="String" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List" />
         FROM tb_user
-        WHERE t_user_phone = #{phone}
+        WHERE t_user_phone like concat('%',#{phone},'%')
     </select>
 
     <insert id="addUser" parameterType="_User">
